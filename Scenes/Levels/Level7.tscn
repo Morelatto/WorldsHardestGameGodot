@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/GoldCoin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ParallelEnemies.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GenericLevel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Stages/7.png" type="Texture" id=4]
+
+[node name="Level7" instance=ExtResource( 3 )]
+
+[node name="ObjectPlacer" parent="." index="1"]
+tile_data = PoolIntArray( 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655379, 1, 0, 655380, 1, 0, 655381, 1, 0 )
+
+[node name="ParallelEnemies" parent="Enemies" index="0" instance=ExtResource( 2 )]
+position = Vector2( 190, 165 )
+
+[node name="First" parent="Enemies/ParallelEnemies" index="0"]
+speed = 250
+
+[node name="ParallelEnemies2" parent="Enemies" index="1" instance=ExtResource( 2 )]
+position = Vector2( 215, 340 )
+
+[node name="First" parent="Enemies/ParallelEnemies2" index="0"]
+rotation = 3.14159
+speed = 250
+
+[node name="GoldCoin" parent="Objectives" index="0" instance=ExtResource( 1 )]
+position = Vector2( 190, 165 )
+
+[node name="GoldCoin2" parent="Objectives" index="1" instance=ExtResource( 1 )]
+position = Vector2( 190, 339 )
+
+[node name="GoldCoin3" parent="Objectives" index="2" instance=ExtResource( 1 )]
+position = Vector2( 464, 339 )
+
+[node name="GoldCoin4" parent="Objectives" index="3" instance=ExtResource( 1 )]
+position = Vector2( 464, 165 )
+
+[node name="End" parent="." index="4"]
+position = Vector2( 479.572, 237.937 )
+
+[node name="Player" parent="." index="5"]
+position = Vector2( 144.168, 255.755 )
+
+[node name="Scenery" parent="Level Area" index="0"]
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" parent="Level Area" index="1"]
+visible = false
+polygon = PoolVector2Array( 103.016, 228.016, 177.901, 227.972, 178.04, 152.973, 474.937, 153.068, 474.988, 228.056, 549.915, 228.083, 550.054, 275.026, 474.847, 275.096, 474.986, 350.025, 177.971, 349.971, 177.971, 275.028, 102.962, 275.094 )
+
+[node name="LevelInfo" parent="UI/Panel" index="1"]
+text = "7/30"
+
+[editable path="Enemies/ParallelEnemies"]
+
+[editable path="Enemies/ParallelEnemies2"]
+
+[editable path="UI"]

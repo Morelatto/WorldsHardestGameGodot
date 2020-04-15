@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/GenericLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Levels/Level4.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/EnemyBlue.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GoldCoin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Stages/3.png" type="Texture" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 289.33, 190.723, 0, 0, 0, 0, 339.873, 190.773, 0, 0, 0, 0, 339.44, 265.402, 0, 0, 0, 0, 264.357, 265.218, 0, 0, 0, 0, 263.852, 190.417, 0, 0, 0, 0, 289.211, 190.354, 0, 0, 0, 0, 289.33, 190.723 )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 25, 25 )
+
+[node name="Level3" instance=ExtResource( 1 )]
+next_level = ExtResource( 2 )
+
+[node name="ObjectPlacer" parent="." index="1"]
+tile_data = PoolIntArray( 524299, 1, 0, 524300, 1, 0, 589835, 1, 0, 589836, 1, 0 )
+
+[node name="Path2D" type="Path2D" parent="Enemies" index="0"]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D" index="0"]
+position = Vector2( 289.33, 190.723 )
+rotation = -0.000463334
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Enemies/Path2D" index="1"]
+position = Vector2( 314.328, 190.748 )
+rotation = -0.000463334
+offset = 25.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D2" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Enemies/Path2D" index="2"]
+position = Vector2( 339.329, 190.772 )
+rotation = -0.000463334
+offset = 50.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D3" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D4" type="PathFollow2D" parent="Enemies/Path2D" index="3"]
+position = Vector2( 339.728, 215.748 )
+rotation = -0.000463334
+offset = 75.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D4" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D5" type="PathFollow2D" parent="Enemies/Path2D" index="4"]
+position = Vector2( 339.583, 240.774 )
+rotation = -0.000463334
+offset = 100.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D5" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D6" type="PathFollow2D" parent="Enemies/Path2D" index="5"]
+position = Vector2( 339.467, 260.765 )
+rotation = -0.000463334
+offset = 120.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D6" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D7" type="PathFollow2D" parent="Enemies/Path2D" index="6"]
+position = Vector2( 317.592, 265.348 )
+rotation = -0.000463334
+offset = 145.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D7" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D8" type="PathFollow2D" parent="Enemies/Path2D" index="7"]
+position = Vector2( 293.599, 265.29 )
+rotation = -0.000463334
+offset = 169.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D8" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D9" type="PathFollow2D" parent="Enemies/Path2D" index="8"]
+position = Vector2( 267.602, 265.226 )
+rotation = -0.000463334
+offset = 195.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D9" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D10" type="PathFollow2D" parent="Enemies/Path2D" index="9"]
+position = Vector2( 264.196, 241.427 )
+rotation = -0.000463334
+offset = 220.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D10" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="PathFollow2D11" type="PathFollow2D" parent="Enemies/Path2D" index="10"]
+position = Vector2( 264.028, 216.416 )
+rotation = -0.000463334
+offset = 245.0
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D11" index="0" instance=ExtResource( 3 )]
+speed = 95
+
+[node name="GoldCoin" parent="Objectives" index="0" instance=ExtResource( 4 )]
+position = Vector2( 265, 165 )
+
+[node name="End" parent="." index="4"]
+position = Vector2( 277.459, 213.76 )
+
+[node name="CollisionShape2D" parent="End" index="0"]
+position = Vector2( 25.5, 14.2 )
+shape = SubResource( 2 )
+
+[node name="Player" parent="." index="5"]
+position = Vector2( 300.441, 229.113 )
+
+[node name="Scenery" parent="Level Area" index="0"]
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" parent="Level Area" index="1"]
+visible = false
+polygon = PoolVector2Array( 253.013, 274.986, 252.996, 152.995, 275.011, 152.995, 274.996, 178.007, 349.994, 178.007, 350.005, 274.997 )
+
+[node name="LevelInfo" parent="UI/Panel" index="1"]
+text = "3/30"
+
+[editable path="End"]
+
+[editable path="UI"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/ParallelEnemies.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/EnemyBlue.tscn" type="PackedScene" id=2]
+
+[node name="ParallelEnemies" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+amount = 5
+margin = 32
+
+[node name="First" parent="." instance=ExtResource( 2 )]

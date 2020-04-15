@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/GenericLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/RotatingEnemies.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Checkpoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Stages/5.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Levels/Level6.tscn" type="PackedScene" id=5]
+
+[node name="Level5" instance=ExtResource( 1 )]
+next_level = ExtResource( 5 )
+
+[node name="ObjectPlacer" parent="." index="1"]
+tile_data = PoolIntArray( 327683, 1, 0, 327684, 1, 0, 327699, 1, 0, 458755, 1, 0, 589838, 1, 0, 655374, 1, 0 )
+
+[node name="Enemies" parent="." index="2"]
+z_index = 1
+
+[node name="RotatingEnemies" parent="Enemies" index="0" instance=ExtResource( 2 )]
+position = Vector2( 302.773, 253.06 )
+height = 4
+margin = 28
+rotation_speed = 1.5
+
+[node name="Checkpoints" type="Node2D" parent="." index="4"]
+
+[node name="Checkpoint" parent="Checkpoints" index="0" instance=ExtResource( 3 )]
+position = Vector2( 476.649, 127.158 )
+
+[node name="Checkpoint2" parent="Checkpoints" index="1" instance=ExtResource( 3 )]
+position = Vector2( 101.468, 177.286 )
+rotation = 6.28319
+
+[node name="Spawner" parent="Checkpoints/Checkpoint2" index="1"]
+position = Vector2( -12.5, 12.5 )
+
+[node name="End" parent="." index="5"]
+position = Vector2( 354.46, 237.997 )
+
+[node name="Player" parent="." index="6"]
+position = Vector2( 92.4268, 138.2 )
+
+[node name="Scenery" parent="Level Area" index="0"]
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" parent="Level Area" index="1"]
+visible = false
+polygon = PoolVector2Array( 78.0186, 127.948, 499.994, 128.007, 499.985, 150.003, 474.97, 149.903, 475.044, 374.985, 128.015, 374.951, 128.087, 199.81, 78.1261, 199.981, 78.0408, 177.984, 425.056, 177.928, 424.89, 324.859, 177.979, 324.859, 178.139, 228.042, 374.65, 228.136, 374.913, 275.042, 228.132, 275.042, 228.132, 249.744, 200.199, 249.744, 199.935, 302.712, 403.373, 303.239, 403.11, 199.939, 149.866, 199.939, 150.393, 353.308, 452.915, 353.044, 452.915, 149.87, 78.1887, 149.87 )
+
+[node name="LevelInfo" parent="UI/Panel" index="1"]
+text = "5/30"
+
+[editable path="Checkpoints/Checkpoint2"]
+
+[editable path="UI"]
