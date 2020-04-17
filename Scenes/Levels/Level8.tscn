@@ -1,0 +1,154 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/GoldCoin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GenericLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Stages/8.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/EnemyBlue.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 166.479, 114.98, 0, 0, 0, 0, 239.232, 114.144, 0, 0, 0, 0, 239.232, 189.824, 0, 0, 0, 0, 164.806, 190.66, 0, 0, 0, 0, 165.642, 114.562, 0, 0, 0, 0, 169.256, 115.506 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 239.194, 139.41, 0, 0, 0, 0, 315.418, 138.181, 0, 0, 0, 0, 314.189, 315.219, 0, 0, 0, 0, 239.501, 314.297, 0, 0, 0, 0, 239.556, 139.286 )
+}
+
+[node name="Level8" instance=ExtResource( 2 )]
+
+[node name="ObjectPlacer" parent="." index="1"]
+tile_data = PoolIntArray( 327687, 1, 0, 524304, 1, 0, 524305, 1, 0, 589840, 1, 0, 589841, 1, 0 )
+
+[node name="Path2D" type="Path2D" parent="Enemies" index="0"]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D" index="0"]
+position = Vector2( 166.479, 114.98 )
+rotation = -0.0114899
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
+speed = 100
+
+[node name="Path2D2" type="Path2D" parent="Enemies" index="1"]
+position = Vector2( 150, 0 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D2" index="0"]
+position = Vector2( 166.479, 114.98 )
+rotation = -0.0114899
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D2/PathFollow2D" index="0" instance=ExtResource( 4 )]
+speed = 100
+
+[node name="Path2D3" type="Path2D" parent="Enemies" index="2"]
+position = Vector2( 150, 75 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D3" index="0"]
+position = Vector2( 166.479, 114.98 )
+rotation = -0.0114899
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D3/PathFollow2D" index="0" instance=ExtResource( 4 )]
+speed = 100
+
+[node name="Path2D4" type="Path2D" parent="Enemies" index="3"]
+position = Vector2( 0, 75 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D4" index="0"]
+position = Vector2( 166.479, 114.98 )
+rotation = -0.0114899
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D4/PathFollow2D" index="0" instance=ExtResource( 4 )]
+speed = 100
+
+[node name="Path2D5" type="Path2D" parent="Enemies" index="4"]
+position = Vector2( 0, 150 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D5" index="0"]
+position = Vector2( 166.479, 114.98 )
+rotation = -0.0114899
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D5/PathFollow2D" index="0" instance=ExtResource( 4 )]
+speed = 100
+
+[node name="Path2D6" type="Path2D" parent="Enemies" index="5"]
+position = Vector2( 150, 150 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D6" index="0"]
+position = Vector2( 166.479, 114.98 )
+rotation = -0.0114899
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D6/PathFollow2D" index="0" instance=ExtResource( 4 )]
+speed = 100
+
+[node name="Path2D7" type="Path2D" parent="Enemies" index="6"]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D7" index="0"]
+position = Vector2( 239.194, 139.41 )
+rotate = false
+
+[node name="Enemy Blue" parent="Enemies/Path2D7/PathFollow2D" index="0" instance=ExtResource( 4 )]
+speed = 100
+
+[node name="GoldCoin" parent="Objectives" index="0" instance=ExtResource( 1 )]
+position = Vector2( 165, 339 )
+
+[node name="GoldCoin2" parent="Objectives" index="1" instance=ExtResource( 1 )]
+position = Vector2( 390, 339 )
+
+[node name="GoldCoin3" parent="Objectives" index="2" instance=ExtResource( 1 )]
+position = Vector2( 390, 115 )
+
+[node name="End" parent="." index="4"]
+position = Vector2( 404, 213 )
+
+[node name="Player" parent="." index="5"]
+position = Vector2( 188.573, 138.816 )
+
+[node name="Scenery" parent="Level Area" index="0"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" parent="Level Area" index="1"]
+polygon = PoolVector2Array( 153.003, 103.003, 250.002, 102.975, 250.002, 127.924, 303.041, 127.924, 303.131, 102.885, 400.056, 103.064, 399.862, 202.787, 449.98, 202.986, 450.079, 250.022, 400.027, 250.153, 399.991, 349.97, 303.001, 349.966, 302.991, 324.946, 250.034, 325.001, 250.003, 350.002, 152.995, 349.998 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Level Area" index="2"]
+polygon = PoolVector2Array( 199.968, 125, 199.973, 150.005, 175.058, 150.06, 175.087, 177.952, 228.043, 177.984, 227.974, 124.975 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Level Area" index="3"]
+polygon = PoolVector2Array( 175.021, 199.981, 175.02, 253.017, 227.973, 252.978, 227.973, 199.967 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Level Area" index="4"]
+position = Vector2( 0, 75 )
+polygon = PoolVector2Array( 175.021, 199.981, 175.02, 253.017, 227.973, 252.978, 227.973, 199.967 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Level Area" index="5"]
+position = Vector2( 150, 75 )
+polygon = PoolVector2Array( 175.021, 199.981, 175.02, 253.017, 227.973, 252.978, 227.973, 199.967 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Level Area" index="6"]
+position = Vector2( 150, 0 )
+polygon = PoolVector2Array( 175.021, 199.981, 175.02, 253.017, 227.973, 252.978, 227.973, 199.967 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Level Area" index="7"]
+position = Vector2( 150, -75 )
+polygon = PoolVector2Array( 175.021, 199.981, 175.02, 253.017, 227.973, 252.978, 227.973, 199.967 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Level Area" index="8"]
+position = Vector2( 150, -75 )
+polygon = PoolVector2Array( 99.9546, 225.006, 152.977, 224.985, 152.995, 378.004, 100.014, 378.004 )
+
+[node name="LevelInfo" parent="UI/Panel/HBoxContainer" index="1"]
+percent_visible = 1.0
+
+[editable path="UI"]

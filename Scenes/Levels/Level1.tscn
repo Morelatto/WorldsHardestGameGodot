@@ -45,7 +45,7 @@ texture = ExtResource( 4 )
 visible = false
 polygon = PoolVector2Array( 78.087, 153.152, 150.087, 153.131, 150.087, 278.161, 178.066, 278.151, 178.089, 178.154, 403.051, 178.176, 403.057, 153.094, 525.071, 153.173, 525.108, 300.14, 453.091, 300.153, 453.063, 175.13, 425.097, 175.161, 425.097, 275.135, 200.086, 275.135, 200.116, 300.167, 78.105, 300.136 )
 
-[node name="LevelInfo" parent="UI/Panel" index="1"]
-text = "1/30"
+[node name="LevelInfo" parent="UI/Panel/HBoxContainer" index="1"]
+percent_visible = 1.0
 
 [editable path="UI"]

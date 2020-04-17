@@ -1,5 +1,7 @@
 extends Control
 
+onready var deathCounter = $Panel/HBoxContainer/DeathsInfo
+
 var deaths: int
 
 func _ready():
@@ -9,4 +11,4 @@ func _on_Player_died():
 	deaths += 1
 	# FIXME death counter resets randomly
 	print("Player died ", deaths, " times")
-	$Panel/DeathsInfo.text = str("DEATHS: ", deaths)
+	deathCounter.text = str("DEATHS: ", deaths)
