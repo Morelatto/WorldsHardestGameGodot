@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/RotatingEnemies.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GenericLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Stages/6.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/GoldCoin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Levels/Level7.tscn" type="PackedScene" id=6]
 
 [node name="Level6" instance=ExtResource( 2 )]
+next_level = ExtResource( 6 )
 
 [node name="ObjectPlacer" parent="." index="1"]
 tile_data = PoolIntArray( 262147, 1, 0, 262148, 1, 0, 327683, 1, 0, 327684, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 786435, 1, 0, 786436, 1, 0, 851971, 1, 0, 851972, 1, 0 )
@@ -88,7 +90,7 @@ texture = ExtResource( 3 )
 visible = false
 polygon = PoolVector2Array( 78.0041, 102.953, 77.972, 149.919, 127.912, 149.985, 128.089, 200.011, 428.025, 200.043, 428.038, 253.075, 128.02, 253.062, 128.037, 303.039, 78.0359, 302.982, 78.0359, 349.928, 525.092, 350.046, 525.018, 103.083 )
 
-[node name="LevelInfo" parent="UI/Panel" index="1"]
+[node name="LevelInfo" parent="UI/Panel/HBoxContainer" index="1"]
 text = "6/30"
 
 [editable path="Checkpoint"]

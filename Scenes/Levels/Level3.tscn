@@ -139,9 +139,9 @@ texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" parent="Level Area" index="1"]
 visible = false
-polygon = PoolVector2Array( 253.013, 274.986, 252.996, 152.995, 275.011, 152.995, 274.996, 178.007, 349.994, 178.007, 350.005, 274.997 )
+polygon = PoolVector2Array( 253.013, 274.986, 252.996, 152.995, 275.011, 152.995, 275.011, 177.99, 349.994, 178.007, 350.005, 274.997 )
 
-[node name="LevelInfo" parent="UI/Panel" index="1"]
+[node name="LevelInfo" parent="UI/Panel/HBoxContainer" index="1"]
 text = "3/30"
 
 [editable path="End"]

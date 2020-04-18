@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/GoldCoin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GenericLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Stages/8.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/EnemyBlue.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Levels/Level9.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -16,6 +17,7 @@ _data = {
 }
 
 [node name="Level8" instance=ExtResource( 2 )]
+next_level = ExtResource( 5 )
 
 [node name="ObjectPlacer" parent="." index="1"]
 tile_data = PoolIntArray( 327687, 1, 0, 524304, 1, 0, 524305, 1, 0, 589840, 1, 0, 589841, 1, 0 )
@@ -149,6 +151,6 @@ position = Vector2( 150, -75 )
 polygon = PoolVector2Array( 99.9546, 225.006, 152.977, 224.985, 152.995, 378.004, 100.014, 378.004 )
 
 [node name="LevelInfo" parent="UI/Panel/HBoxContainer" index="1"]
-percent_visible = 1.0
+text = "8/30"
 
 [editable path="UI"]

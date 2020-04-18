@@ -5,6 +5,8 @@ func _on_End_body_entered(body):
 	if check_objective_complete(body.coins):
 		if owner.next_level != null:
 			get_tree().change_scene_to(owner.next_level)
+	else:
+		print("Objective not complete ", body.coins)
 
 func check_objective_complete(coins):
 	var objectives = owner.get_node("Objectives")

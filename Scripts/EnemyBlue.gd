@@ -15,7 +15,7 @@ func _physics_process(delta):
 			$RayCast2D.cast_to = $RayCast2D.cast_to.rotated(PI)
 		# using raycast cast direction to decide where to go
 		var dir = get_dir($RayCast2D.cast_to)
-		move_and_slide(speed * dir, Vector2.ZERO, false, 3)
+		move_and_slide(speed * dir)
 
 func get_dir(pos):
 	pos = pos.rotated(self.rotation)

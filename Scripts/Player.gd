@@ -17,7 +17,7 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var final_movement = collision.normal.slide(collision.remainder)
-		velocity = move_and_slide(final_movement)
+		move_and_slide(final_movement)
 
 func get_input():
 	velocity = Vector2()
@@ -34,10 +34,9 @@ func get_input():
 
 func die():
 	print("Player died")
-	if is_physics_processing():
-		set_physics_process(false)
-		$AnimationPlayer.play("death")
-		emit_signal("died")
+	set_physics_process(false)
+	$AnimationPlayer.play("death")
+	emit_signal("died")
 
 func reset():
 	print("Reseting player")
@@ -50,10 +49,13 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	owner.reset()
 
 func _on_EnemyDetector_body_entered(body):
-	print("Player collided with enemy ", body.name)
-	die()
+	if is_physics_processing():
+		print("Player collided with enemy ", body.name)
+		die()
 
 func _on_CoinDetector_body_entered(body):
-	print("Player picked up coin ", self.coins)
-	self.coins += 1
-	body.pickup()
+	# TODO better way of checking if coin was picked up
+	if body.get_node("Sprite").get_modulate().a != 0:
+		print("Player picked up coin ", self.coins)
+		self.coins += 1
+		body.pickup()

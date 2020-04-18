@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Stages/9.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/EnemyBlue.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/GenericLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/GoldCoin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Levels/Level10.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -22,6 +23,7 @@ _data = {
 }
 
 [node name="Level9" instance=ExtResource( 3 )]
+next_level = ExtResource( 6 )
 
 [node name="ObjectPlacer" parent="." index="1"]
 tile_data = PoolIntArray( 262147, 1, 0, 262148, 1, 0, 327683, 1, 0, 327684, 1, 0, 524307, 1, 0, 524308, 1, 0, 589843, 1, 0, 589844, 1, 0, 655371, 1, 0, 655372, 1, 0, 720907, 1, 0, 720908, 1, 0 )
@@ -89,7 +91,7 @@ scale = Vector2( 0.962119, 0.954703 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D2" index="0"]
-position = Vector2( 115.52, 191.583 )
+position = Vector2( 115.519, 191.583 )
 offset = 53.27
 rotate = false
 
@@ -102,7 +104,7 @@ scale = Vector2( 0.962119, 0.954703 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D3" index="0"]
-position = Vector2( 117.614, 189.208 )
+position = Vector2( 117.614, 189.207 )
 offset = 50.18
 rotate = false
 
@@ -115,7 +117,7 @@ scale = Vector2( 0.962119, 0.954703 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D4" index="0"]
-position = Vector2( 115.477, 191.615 )
+position = Vector2( 115.477, 191.614 )
 offset = 53.32
 rotate = false
 
@@ -128,7 +130,7 @@ scale = Vector2( 0.962119, 0.954703 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D5" index="0"]
-position = Vector2( 115.477, 191.615 )
+position = Vector2( 115.477, 191.614 )
 offset = 53.32
 rotate = false
 
@@ -165,7 +167,7 @@ scale = Vector2( 0.962119, 0.954703 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D8" index="0"]
-position = Vector2( 117.614, 189.208 )
+position = Vector2( 117.614, 189.207 )
 offset = 50.18
 rotate = false
 
@@ -223,6 +225,5 @@ polygon = PoolVector2Array( 125.007, 199.993, 125.021, 302.91, 178.04, 302.998, 
 
 [node name="LevelInfo" parent="UI/Panel/HBoxContainer" index="1"]
 text = "9/30"
-percent_visible = 1.0
 
 [editable path="UI"]

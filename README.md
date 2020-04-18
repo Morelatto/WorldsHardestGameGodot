@@ -11,7 +11,7 @@ Stages and game objects taken from https://www.spriters-resource.com/pc_computer
 * Main menu
 * Level selector
 * Pause
-* Levels 7-30
+* Levels 11-30
 * Music
 * Fix pixelated sprites
 * Fix player getting stuck on walls
