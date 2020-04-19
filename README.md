@@ -14,4 +14,3 @@ Stages and game objects taken from https://www.spriters-resource.com/pc_computer
 * Levels 11-30
 * Music
 * Fix pixelated sprites
-* Fix player getting stuck on walls

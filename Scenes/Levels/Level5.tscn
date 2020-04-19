@@ -19,6 +19,7 @@ z_index = 1
 position = Vector2( 302.773, 253.06 )
 height = 4
 margin = 28
+center_visible = false
 rotation_speed = 1.5
 
 [node name="Checkpoints" type="Node2D" parent="." index="4"]
@@ -37,7 +38,7 @@ position = Vector2( -12.5, 12.5 )
 position = Vector2( 354.46, 237.997 )
 
 [node name="Player" parent="." index="6"]
-position = Vector2( 92.4268, 138.2 )
+position = Vector2( 92.4268, 139.15 )
 
 [node name="Scenery" parent="Level Area" index="0"]
 texture = ExtResource( 4 )

@@ -37,19 +37,24 @@ __meta__ = {
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 603.0
 margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-margin_left = 20.0
-margin_top = 3.0
-margin_right = 580.0
-margin_bottom = 33.0
-custom_constants/separation = 198
+margin_top = 2.0
+margin_right = 603.0
+margin_bottom = 30.0
+grow_horizontal = 0
+custom_constants/separation = 215
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MenuButton" type="Button" parent="Panel/HBoxContainer"]
-margin_right = 53.0
+margin_left = 11.0
+margin_right = 64.0
 margin_bottom = 30.0
 focus_mode = 0
 custom_fonts/font = SubResource( 2 )
@@ -60,9 +65,9 @@ flat = true
 align = 0
 
 [node name="LevelInfo" type="Label" parent="Panel/HBoxContainer"]
-margin_left = 251.0
+margin_left = 279.0
 margin_top = 3.0
-margin_right = 287.0
+margin_right = 315.0
 margin_bottom = 27.0
 custom_fonts/font = SubResource( 3 )
 text = "0/30"
@@ -70,8 +75,8 @@ align = 1
 valign = 1
 
 [node name="DeathsInfo" type="Label" parent="Panel/HBoxContainer"]
-margin_left = 485.0
-margin_right = 546.0
+margin_left = 530.0
+margin_right = 591.0
 margin_bottom = 30.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 4 )

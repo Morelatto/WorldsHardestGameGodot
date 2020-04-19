@@ -1,36 +1,43 @@
 extends KinematicBody2D
 
 export var SPEED = 150
+export var ACCELERATION = 2000
 
-var velocity: Vector2
+var motion: Vector2
 var starting_position: Vector2
 var coins: int
 
 signal died
 
 func _ready():
+	motion = Vector2.ZERO
 	starting_position = global_position
 	coins = 0
 
 func _physics_process(delta):
-	get_input()
-	var collision = move_and_collide(velocity * delta)
-	if collision:
-		var final_movement = collision.normal.slide(collision.remainder)
-		move_and_slide(final_movement)
+	var axis = get_input_axis()
+	if axis == Vector2.ZERO:
+		apply_friction(ACCELERATION * delta)
+	else:
+		apply_movement(axis * ACCELERATION * delta)
+	motion = move_and_slide(motion)
 
-func get_input():
-	velocity = Vector2()
-	if Input.is_action_pressed('ui_right'):
-		velocity.x += 1
-	if Input.is_action_pressed('ui_left'):
-		velocity.x -= 1
-	if Input.is_action_pressed('ui_down'):
-		velocity.y += 1
-	if Input.is_action_pressed('ui_up'):
-		velocity.y -= 1
+func get_input_axis():
+	var axis = Vector2.ZERO
+	axis.x = Input.get_action_strength('ui_right') - Input.get_action_strength('ui_left')
+	axis.y = Input.get_action_strength('ui_down') - Input.get_action_strength('ui_up')
 	# normalize so diagonal movement isn't faster
-	velocity = velocity.normalized() * SPEED
+	return axis.normalized()
+
+func apply_friction(amount):
+	if motion.length() > amount:
+		motion -= motion.normalized() * amount
+	else:
+		motion = Vector2.ZERO
+
+func apply_movement(acceleration):
+	motion += acceleration
+	motion = motion.clamped(SPEED)
 
 func die():
 	print("Player died")
